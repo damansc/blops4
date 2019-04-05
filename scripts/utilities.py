@@ -1,12 +1,7 @@
 import os
 import pandas as pd
 
-def import_cwl(Dates = [], PICKUP_FOLDER='./activision_github/cwl-data/data/', COPY_FOLDER='./data_imports/'):
-
-    """
-    Utility to import new cwl data from PICKUP_FOLDER in the cloned activision repository and stores this data
-    in the COPY_FOLDER to use for analysis and further research.
-    """ 
+def import_cwl(Dates = [], PICKUP_FOLDER='./cwl-data/data/', COPY_FOLDER='./data_imports/'):
 
     EVENT_FILES = os.listdir(PICKUP_FOLDER)
     DATA_FILES = [s for s in EVENT_FILES if any(xs in s for xs in Dates)]
@@ -26,3 +21,4 @@ def import_cwl(Dates = [], PICKUP_FOLDER='./activision_github/cwl-data/data/', C
     for x in data_list:
         for i in EVENT_FILES:
             x.to_csv('{}{}'.format(COPY_FOLDER, i))
+
