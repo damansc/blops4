@@ -1,0 +1,3 @@
+[submodule "cwl-data"]
+	path = cwl-data
+	url = https://github.com/Activision/cwl-data
